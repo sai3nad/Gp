@@ -1,0 +1,27 @@
++----------------+       +--------------+        +----------------------+
+|    ACCESSIONS   |       |   ATTRIBUTES |        |    CHARACTERIZATIONS  |
++----------------+       +--------------+        +----------------------+
+| accession_id   | 1---M | attribute_id |        | accession_id (FK)     |
+| genus          |-------| attribute_name| 1---M  | trait_id (FK)         |
+| species        |       | attribute_value|-------| char_value            |
+| country_origin |       +--------------+        | char_date             |
+| coll_date      |                               +----------------------+
+| breeding_meth  |
+| repro_uniform  |
+| growth_habit   |
+| leaf_morph     |
+| flowering_time |
+| seed_storage   |
+| disease_resist |
+| abiotic_stress |
++----------------+
+
++----------------+        +------------+        +--------------+
+|    EXPERIMENTS |        |     TRAITS |        |   OBSERVATIONS |
++----------------+        +------------+        +--------------+
+| experiment_id   | 1---M  | trait_id   | 1---M  | accession_id |
+| accession_id    |--------| trait_name|--------| experiment_id |
+| experiment_date|        +------------+        | trait_id     |
+| location       |                             | obs_value    |
+| experiment_type|                             | obs_date     |
++----------------+                             +--------------+
